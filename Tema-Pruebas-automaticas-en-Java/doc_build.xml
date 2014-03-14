@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="WINDOWS-1252"?>
+<project name="Generación de documentación" default="compile" basedir=".">
+	<description>
+	  Generación de documentación.
+ </description>
+
+	<!-- Properties of the project... -->
+
+	<!-- Dir properties -->
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="doc.dir" value="${basedir}/doc" />
+	<property name="doccheck.dir" value="${basedir}/doccheck" />
+	<property name="lib.dir" value="${basedir}/lib" />
+
+	<!-- ==================== Definition of CLASSPATH ====================================== -->
+	<path id="compile.classpath">
+		<pathelement location="${build.dir}" />
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!-- 
+======================================
+Development Targets
+======================================
+-->
+
+	<target name="all" description="Development targets." depends="clean, prepare, compile, allDoc" />
+
+	<!-- ==================== Prepare Target ==================================== -->
+	<target description="Create directories" name="prepare">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${doc.dir}" />
+		<mkdir dir="${doccheck.dir}" />
+	</target>
+
+	<!-- ==================== Clean Target ==================================== -->
+	<!--
+  Delete the previous files from directories, to rebuild the complete products.
+-->
+
+	<target description="Delete the directories with generated products ." name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${doc.dir}" />
+		<delete dir="${doccheck.dir}" />
+	</target>
+
+
+	<!-- ==================== Compile Target ==================================== -->
+	<target name="compile" depends="prepare" description="Compile the full source files.">
+		<javac includeantruntime="false" srcdir="${src.dir}" destdir="${build.dir}" source="1.6">
+			<!--  -->
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+
+	<!--
+=========================================
+Documentation Targets
+=========================================
+-->
+	<!-- ==================== All Doc Targets ================================== -->
+	<target name="allDoc" depends="javadoc, doccheck" />
+
+
+	<!-- ==================== Javadoc Target ================================== -->
+	<target name="javadoc" depends="prepare,compile" description="JavaDoc API">
+		<javadoc destdir="${doc.dir}" packagenames="*" source="1.7" access="private">
+			<link offline="true" href="http://java.sun.com/j2se/1.7.0/docs/api/" packagelistLoc="${resources.dir}" />
+			<classpath>
+				<pathelement location="${build.dir}" />
+				<fileset dir="${lib.dir}">
+					<include name="*.jar" />
+				</fileset>
+				<pathelement path="." />
+			</classpath>
+			<fileset dir="${src.dir}" casesensitive="yes">
+				<include name="**/*.java" />
+			</fileset>
+		</javadoc>
+	</target>
+
+	<!-- ==================== Javadoc Doccheck Target ================================== -->
+
+	<target name="doccheck" depends="prepare,compile" description="Check the documentation">
+		<javadoc maxmemory="128M" destdir="${doccheck.dir}" 
+			sourcepath="${src.dir}" 
+			doclet="com.sun.tools.doclets.doccheck.DocCheck" 
+			docletpath="${lib.dir}/doccheck.jar"
+			source="1.6" access="private">
+			<classpath refid="compile.classpath" />
+			<fileset dir="${src.dir}" casesensitive="yes">
+				<include name="**/*.java" />
+			</fileset>
+		</javadoc>
+	</target>
+</project>
