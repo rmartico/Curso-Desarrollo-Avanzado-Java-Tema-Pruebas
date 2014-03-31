@@ -3,8 +3,8 @@ package ejemplos.junit.basicos;
 /**
  * Clase quer representa un byte (8 bits con valores 0 y 1).
  * 
- * @author <A HREF="mailto:rmartico@ubu.es">Raúl Marticorena</A>
- * @author <A HREF="mailto:clopezno@ubu.es">Carlos López</A>
+ * @author <A HREF="mailto:rmartico@ubu.es">RaÃºl Marticorena</A>
+ * @author <A HREF="mailto:clopezno@ubu.es">Carlos LÃ³pez</A>
  * @version 1.0
  * 
  */
@@ -28,7 +28,7 @@ public class Byte {
 		}
 		for (int i = 0; i < bits.length(); i++) {
 			if (bits.charAt(i) != '0' && bits.charAt(i) != '1') {
-				throw new FormatoException("Carácter incorrecto "
+				throw new FormatoException("Carï¿½cter incorrecto "
 						+ bits.charAt(i));
 			}
 		}
@@ -47,10 +47,10 @@ public class Byte {
 	}
 
 	/**
-	 * Traducción interna de los cuatro bits.
+	 * Traduccion interna de los cuatro bits.
 	 * 
 	 * @param fourBits cuatro bits
-	 * @return traducción hexadecimal
+	 * @return traducciÃ³n hexadecimal
 	 */
 	private String translate(String fourBits) {
 		int pow = 3;
