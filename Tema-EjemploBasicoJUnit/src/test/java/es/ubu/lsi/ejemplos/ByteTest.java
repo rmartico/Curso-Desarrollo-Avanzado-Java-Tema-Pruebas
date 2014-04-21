@@ -6,6 +6,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
+import org.junit.runner.JUnitCore;
 
 import es.ubu.lsi.ejemplos.Byte;
 import es.ubu.lsi.ejemplos.FormatoException;
@@ -124,5 +125,9 @@ public class ByteTest {
 		Byte b = new Byte("10011110");
 		Byte b2 = new Byte("10011110");
 		assertEquals("No coincidencia de valores.", b.aHex(),b2.aHex());
+	}
+	
+	public static void main(String[] args) {
+		JUnitCore.main("es.ubu.lsi.ejemplos.ByteTest");
 	}
 }
