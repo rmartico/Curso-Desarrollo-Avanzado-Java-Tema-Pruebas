@@ -6,9 +6,9 @@ import static org.junit.Assert.assertThat;
 import org.junit.Test;
 
 /**
- * Pruebas unitarias sobre la clase Math y el m�todo sqrt.
+ * Pruebas unitarias sobre la clase Math y el método sqrt.
  * 
- * @author <a href="mailto:rmartico@ubu.es">Ra�l Marticorena S�nchez</a>
+ * @author <a href="mailto:rmartico@ubu.es">Raúl Marticorena Sánchez</a>
  * @version 1.0 20111214
  * 
  */

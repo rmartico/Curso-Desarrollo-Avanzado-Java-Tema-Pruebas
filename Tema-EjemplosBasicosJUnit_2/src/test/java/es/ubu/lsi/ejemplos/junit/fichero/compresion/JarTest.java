@@ -1,6 +1,6 @@
 package es.ubu.lsi.ejemplos.junit.fichero.compresion;
 
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Before;

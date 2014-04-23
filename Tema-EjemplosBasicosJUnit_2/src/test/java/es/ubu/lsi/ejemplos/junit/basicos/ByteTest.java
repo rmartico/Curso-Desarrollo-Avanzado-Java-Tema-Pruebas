@@ -1,6 +1,6 @@
 package es.ubu.lsi.ejemplos.junit.basicos;
 
-import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.Is.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
@@ -10,8 +10,8 @@ import org.junit.Test;
 /**
  * Pruebas sobre la clase implementada Byte.
  * 
- * @author <A HREF="mailto:rmartico@ubu.es">Raul Marticorena</A>
- * @author <A HREF="mailto:clopezno@ubu.es">Carlos L�pez</A>
+ * @author <A HREF="mailto:rmartico@ubu.es">Raúl Marticorena</A>
+ * @author <A HREF="mailto:clopezno@ubu.es">Carlos López</A>
  * @version 1.0
  * 
  */
@@ -20,7 +20,7 @@ public class ByteTest {
 	@Test(expected = FormatoException.class)
 	public void constructorSinContenido() throws FormatoException {
 		// no es necesario recoger el resultado en una variable
-		new Byte("");
+		new Byte("");		
 	}
 
 	@Test(expected = FormatoException.class)

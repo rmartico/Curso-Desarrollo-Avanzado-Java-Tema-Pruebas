@@ -13,6 +13,12 @@
 		</fileset>
 	</path>
 	
+	<!-- Clean directories -->
+	<target name="clean">
+		<delete dir="${reports.xml.dir}" />
+		<delete dir="${reports.html.dir}" />
+	</target>
+	
 	<!-- Create initial directories -->
 	<target name="init">
 		<mkdir dir="${reports.xml.dir}" />
@@ -20,7 +26,7 @@
 	</target>
 
 	<!-- Previously mvn package... -->
-	<target name="test" depends="init">
+	<target name="test" depends="clean, init">
 		<junit fork="yes" dir="${basedir}" failureProperty="test.failed">
 			
 			<classpath refid="junit.classpath" />
