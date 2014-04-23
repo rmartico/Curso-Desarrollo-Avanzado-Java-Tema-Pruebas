@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Basic Tests" default="test" basedir=".">
+
+	<description>Example using JUnit</description>
+
+	<property file="build.properties" />
+	
+	<!-- Global classpath -->
+	<path id="junit.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="junit-4.11.jar" />
+		</fileset>
+	</path>
+	
+	<!-- Clean directories -->
+	<target name="clean">
+		<delete dir="${reports.xml.dir}" />
+		<delete dir="${reports.html.dir}" />
+	</target>
+	
+	<!-- Create initial directories -->
+	<target name="init">
+		<mkdir dir="${reports.xml.dir}" />
+		<mkdir dir="${reports.html.dir}" />
+	</target>
+
+	<!-- Previously mvn package... -->
+	<target name="test" depends="clean, init">
+		<junit fork="yes" dir="${basedir}" failureProperty="test.failed">
+			
+			<classpath refid="junit.classpath" />
+			
+			<classpath location="${classes.dir}" />
+			<classpath location="${tests.classes.dir}" />
+
+			<formatter type="xml" />
+			<test name="${testcase}" todir="${reports.xml.dir}" if="testcase" />
+			<batchtest todir="${reports.xml.dir}" unless="testcase">
+				<fileset dir="${tests.src.dir}">
+					<include name="**/*Test.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+
+		<junitreport todir="${reports.xml.dir}" >
+			<fileset dir="${reports.xml.dir}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${reports.html.dir}" />
+		</junitreport>
+	</target>
+
+</project>
+
