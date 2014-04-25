@@ -44,14 +44,14 @@ public class ListTest {
         return new JUnit4TestAdapter(ListTest.class);
     }
 
-    @Ignore("not today")
+    //@Ignore("not today")
     @Test
     public void capacity() {
         int size = fFull.size();
         for (int i = 0; i < 100; i++) {
             fFull.add(i);
         }
-        assertTrue(fFull.size() == 100 + size);
+        assertTrue(fFull.size() == 101 + size);
     }
 
     @Test

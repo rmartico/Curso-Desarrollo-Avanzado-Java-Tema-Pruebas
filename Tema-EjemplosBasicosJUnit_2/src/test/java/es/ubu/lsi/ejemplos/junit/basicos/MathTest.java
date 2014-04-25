@@ -1,6 +1,6 @@
 package es.ubu.lsi.ejemplos.junit.basicos;
 
-import static org.hamcrest.core.Is.is;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
@@ -51,7 +51,7 @@ public class MathTest {
 	
 	@Test
 	public void raizCientoCuearentaYCuatro() {
-		assertThat(Math.sqrt(144.0),is(12.0));
+		assertThat(Math.sqrt(144.0),is(12.1));
 	}
 	
 	@Test

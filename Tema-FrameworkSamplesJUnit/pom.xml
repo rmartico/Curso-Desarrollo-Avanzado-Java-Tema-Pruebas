@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>EjemploBasico2</name>
+	<name>FrameworkSamplesJUnit</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -49,4 +49,5 @@
 			</plugin>
 		</plugins>
 	</build>
+	<description>Proyecto con los ejemplos básicos de JUnit.</description>
 </project>
