@@ -1,23 +1,25 @@
 package es.ubu.lsi.mockito;
 
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Matchers;
 import org.mockito.Mock;
-import static org.mockito.Mockito.*;
-import static org.mockito.Matchers.*;
 import org.mockito.runners.MockitoJUnitRunner;
-
-import static org.hamcrest.core.Is.*;
-import static org.junit.Assert.assertThat;
 
 /**
  * Ejemplo básico de uso de mocks y stubbing.
  * 
- * Se comprueba la correcta interaccion del cliente con la interfaz java.util.List,
- * comprobando que el numero de invocaciones es el esperado.
+ * Se comprueba la correcta interaccion del cliente con la interfaz
+ * java.util.List, comprobando que el numero de invocaciones es el esperado.
  * 
  * @author <A HREF="mailto:rmartico@ubu.es">Raul Marticorena</A>
  * @author <A HREF="mailto:clopezno@ubu.es">Carlos Lopez</A>
@@ -40,11 +42,14 @@ public class EjemploBasicoMockitoTest {
 	public void testUsandoLista() {
 		// Creación del mock programando explícitamente
 		// en lugar de utilizar el mock inicializado con la anotación
+		@SuppressWarnings("unchecked")
 		List<String> listaMock = mock(List.class);
+		
 		ClaseATestar cliente = new ClaseATestar();
 		cliente.inyectar(listaMock); // inyectamos un mock
 		cliente.añadir("uno");
 		cliente.añadir("dos");
+		
 		// Comprobar que se ha invocado al método añadir dos veces
 		verify(listaMock, times(2)).add(anyString());
 	}
@@ -57,19 +62,20 @@ public class EjemploBasicoMockitoTest {
 		ClaseATestar cliente = new ClaseATestar();
 		cliente.inyectar(listaMockAnotacion);
 		cliente.añadir("uno");
-		// Comprobar que se ha invocado al método añadir dos veces
+		
+		// Comprobar que se ha invocado al método añadir una vez
 		verify(listaMockAnotacion).add(anyString());
 	}
 
 	/**
-	 * Comprobando que se llama una vez al método a�adir y stubbing comprobando
-	 * resultado.
+	 * Comprobando que se llama una vez al método añadir 
+	 * y stubbing comprobando resultado.
 	 */
 	@Test
 	public void testUsandoListaAnotacionConStubbing() {
 		// Stubbing
-		when(listaMockAnotacion.get(0)).thenReturn("uno");
-		when(listaMockAnotacion.get(1)).thenReturn("dos");
+//		when(listaMockAnotacion.get(0)).thenReturn("uno");
+//		when(listaMockAnotacion.get(1)).thenReturn("dos");
 		// Fin stubbing
 		ClaseATestar cliente = new ClaseATestar();
 		cliente.inyectar(listaMockAnotacion);

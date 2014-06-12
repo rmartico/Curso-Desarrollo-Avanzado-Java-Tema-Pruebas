@@ -63,12 +63,12 @@ public class ClienteTest {
 		assertThat(cliente.sumar(),is(2011));	
 		
 		// comportamiento por defecto del mock
-		// porque de esta operaci�n no hemos hecho stubbing
+		// porque de esta operacion no hemos hecho stubbing
 		assertThat(mockDelegado.restar(10, 8),is(0)); 		
 	}
 	
 	/**
-	 * Test que comprueba que se realizan un n�mero de instanciaciones
+	 * Test que comprueba que se realizan un numero de instanciaciones
 	 * sobre un cierto tipo.
 	 * 
 	 * @throws Exception si hay algun error
@@ -78,6 +78,7 @@ public class ClienteTest {
 		Delegado delegado = new Delegado(); // Delegado "real"
 		// Cuando se instancia sin argumentos retornamos el delegado "real"
 		whenNew(Delegado.class).withNoArguments().thenReturn(delegado);
+		
 		for (int i = 0; i <10; i++) {
 			@SuppressWarnings("unused")
 			// en cada iteracion se instancia un Delegado...

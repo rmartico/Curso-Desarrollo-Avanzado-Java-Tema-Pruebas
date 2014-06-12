@@ -2,7 +2,7 @@ package es.ubu.lsi.powermock.estaticos;
 
 /**
  * Cliente basico que delega todas las operaciones en una instancia
- * de una clase delegado, invocando a sus m�todos estaticos.
+ * de una clase delegado, invocando a sus metodos estaticos.
  * 
  * @author <A HREF="mailto:rmartico@ubu.es">Raul Marticorena</A>
  * @author <A HREF="mailto:clopezno@ubu.es">Carlos Lopez</A>
