@@ -31,7 +31,8 @@ public class HolaHSQLDB {
 		    connection.close(); // cerramos
 		 } catch (SQLException e) {
 			 System.err.println("Error en conexión a la base de datos HSQLDB, revise su CLASSPATH");
-			 System.err.println("y añada el fichero hsqldb.jar al mismo o bien a través de un gestor de dependencias como Maven.");			
+			 System.err.println("y añada el fichero hsqldb.jar al mismo");
+			 System.err.println("o bien a través de un gestor de dependencias como Maven.");			
 		    e.printStackTrace();
 		 }
 	}

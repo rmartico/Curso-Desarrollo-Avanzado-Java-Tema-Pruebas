@@ -24,8 +24,8 @@ import es.ubu.lsi.dbunit.utils.AgendaDB;
 /**
  * Ejemplo de test dbUnit sobre operaciones con una base de datos.
  * 
- * @author <A HREF="mailto:rmartico@ubu.es">Ra�l Marticorena</A>
- * @author <A HREF="mailto:clopezno@ubu.es">Carlos L�pez</A>
+ * @author <A HREF="mailto:rmartico@ubu.es">Raúl Marticorena</A>
+ * @author <A HREF="mailto:clopezno@ubu.es">Carlos López</A>
  * @version 1.0
  */
 public class EjemploDBUnitTest extends DBTestCase {
@@ -74,7 +74,7 @@ public class EjemploDBUnitTest extends DBTestCase {
 	 * @throws Exception
 	 */
 	public void testComprobarBorradoTablaLlamadas() throws Exception {
-		// Ejecutar el c�digo que modifica la base datos aqu�...
+		// Ejecutar el código que modifica la base datos aquí...
 		IDatabaseConnection con = getConnection();
 		Connection jdbcCon = con.getConnection();
 		Statement stmt = jdbcCon.createStatement();
@@ -95,12 +95,12 @@ public class EjemploDBUnitTest extends DBTestCase {
 	}
 
 	/**
-	 * Test comprobando que la actualizaci�n se realiza correctamente.
+	 * Test comprobando que la actualización se realiza correctamente.
 	 * 
 	 * @throws Exception
 	 */
 	public void testComprobarActualizacionTablaLlamadas() throws Exception {
-		// Ejecutar el c�digo que modifica la base datos aqu�...
+		// Ejecutar el código que modifica la base datos aquí...
 		IDatabaseConnection con = getConnection();
 		Connection jdbcCon = con.getConnection();
 		Statement stmt = jdbcCon.createStatement();
@@ -115,9 +115,11 @@ public class EjemploDBUnitTest extends DBTestCase {
 		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File(
 				"./data/expectedDataSet_llamadasHoraActualizada.xml"));
 		ITable expectedTable = expectedDataSet.getTable("Llamadas");
-		// Filtramos s�lo las columnas que est�n en el dataset esperado...
+		
+		// Filtramos sólo las columnas que están en el dataset esperado...
 		ITable filteredTable = DefaultColumnFilter.includedColumnsTable(
 				actualTable, expectedTable.getTableMetaData().getColumns());
+		
 		// Comprobar que se cumple lo esperado
 		Assertion.assertEquals(expectedTable, filteredTable);
 	}
@@ -125,12 +127,12 @@ public class EjemploDBUnitTest extends DBTestCase {
 	/**
 	 * Test comprobando que la consulta se realiza correctamente. 
 	 * Se utiliza la ordenacion de columnas, dado que el resultado no incluye
-	 * clave primaria y podr�a no coincidir el orden de las columnas.
+	 * clave primaria y podría no coincidir el orden de las columnas.
 	 * 
 	 * @throws Exception
 	 */
 	public void testComprobarConsulta() throws Exception {
-		// Ejecutar el c�digo que modifica la base datos aqu�...
+		// Ejecutar el código que modifica la base datos aquí...
 		IDatabaseConnection con = getConnection();
 		Connection jdbcCon = con.getConnection();
 		Statement stmt = jdbcCon.createStatement();
@@ -143,12 +145,13 @@ public class EjemploDBUnitTest extends DBTestCase {
 
 		// Obtener datos esperados de un fichero externo XML
 		IDataSet expectedDataSet = new FlatXmlDataSetBuilder().build(new File(
-				"./data/expectedDataSet_consultaContactos.xml"));
-		
+				"./data/expectedDataSet_consultaContactos.xml"));		
 		ITable expectedTable = expectedDataSet.getTable("Contactos");
+		
 		// Ordenamos los datos
 		ITable sortedExpectedTable = new SortedTable(expectedTable);
-		// Filtramos s�lo las columnas que est�n en el dataset esperado
+		
+		// Filtramos sólo las columnas que están en el dataset esperado
 		// en el mismo orden
 		ITable filteredAndSortedTable = DefaultColumnFilter.includedColumnsTable(
 				new SortedTable(actualTable), sortedExpectedTable.getTableMetaData().getColumns());
@@ -159,7 +162,7 @@ public class EjemploDBUnitTest extends DBTestCase {
 	
 	/**
 	 * Obtiene los metadatos y conjunto de datos para cargar en la base de
-	 * datos. Fundamental para la correcta inicializaci�n de datos antes de 
+	 * datos. Fundamental para la correcta inicialización de datos antes de 
 	 * cada test.
 	 * 
 	 * @return base de datos
@@ -170,10 +173,10 @@ public class EjemploDBUnitTest extends DBTestCase {
 	}
 
 	/**
-	 * Redefine configuraci�n de la base de datos utilizada si fuera necesario.
+	 * Redefine configuración de la base de datos utilizada si fuera necesario.
 	 * 
 	 * @param config
-	 *            configuraci�n a manipular
+	 *            configuración a manipular
 	 */
 	@Override
 	protected void setUpDatabaseConfig(DatabaseConfig config) {
@@ -194,6 +197,6 @@ public class EjemploDBUnitTest extends DBTestCase {
 	 */
 	@Override
 	protected DatabaseOperation getTearDownOperation() throws Exception {
-		return DatabaseOperation.REFRESH;
+		return DatabaseOperation.NONE;
 	}
 }

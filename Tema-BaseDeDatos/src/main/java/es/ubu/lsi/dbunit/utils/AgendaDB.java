@@ -20,7 +20,7 @@ public class AgendaDB {
 	/** Script con el volcado de datos */
 	private static final String DATA_BULK = "./data/bulk datos.txt";
 
-	/** Script de creaci�n de la base de datos */
+	/** Script de creación de la base de datos */
 	private static final String SCRIPT = "./data/script db agenda.txt";
 
 	/** Conexi�n */
@@ -39,7 +39,7 @@ public class AgendaDB {
 				"sa", "");
 		Statement stmt = connection.createStatement();
 
-		// Fase 1: Carga del script de creaci�n de base de datos...
+		// Fase 1: Carga del script de creación de base de datos...
 		String sqlCreacion = obtenerScript(SCRIPT);
 		stmt.executeUpdate(sqlCreacion);
 
@@ -65,7 +65,7 @@ public class AgendaDB {
 				"sa", "");
 		Statement stmt = connection.createStatement();
 
-		// Fase 1: Carga del script de creaci�n de base de datos...
+		// Fase 1: Carga del script de creación de base de datos...
 		String sqlCreacion = obtenerScript(SCRIPT);
 		stmt.executeUpdate(sqlCreacion);
 
@@ -95,7 +95,7 @@ public class AgendaDB {
 
 
 	/**
-	 * Obtiene el texto del script a leer
+	 * Obtiene el texto del script a leer.
 	 * 
 	 * @param ruta
 	 *            ruta del fichero script
