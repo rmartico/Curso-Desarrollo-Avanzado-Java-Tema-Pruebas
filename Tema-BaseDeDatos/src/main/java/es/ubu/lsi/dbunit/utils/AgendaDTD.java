@@ -13,16 +13,16 @@ import org.dbunit.dataset.DataSetException;
 import org.dbunit.dataset.xml.FlatDtdDataSet;
 
 /**
- * Gesti�n de DTD de una base de datos con dbUnit.
+ * Gestión de DTD de una base de datos con dbUnit.
  * 
- * @author <A HREF="mailto:rmartico@ubu.es">Ra�l Marticorena</A>
- * @author <A HREF="mailto:clopezno@ubu.es">Carlos L�pez</A>
+ * @author <A HREF="mailto:rmartico@ubu.es">Raúl Marticorena</A>
+ * @author <A HREF="mailto:clopezno@ubu.es">Carlos López</A>
  * @version 1.0
  */
 public class AgendaDTD {
 
 	/**
-	 * Creaci�n de la DTD correspondiente a la base de datos Agenda.
+	 * Creación de la DTD correspondiente a la base de datos Agenda.
 	 * 
 	 * @param args
 	 *            argumentos
@@ -42,13 +42,13 @@ public class AgendaDTD {
 	 * @param rutaDTD
 	 *            ruta
 	 * @param jdbcConnection
-	 *            conexi�n a la base de datos
+	 *            conexión a la base de datos
 	 * @throws SQLException
 	 *             error en acceso a base de datos
 	 * @throws IOException
 	 *             error en acceso a fichero
 	 * @throws DataSetException
-	 *             error en creaci�n del dataset
+	 *             error en creación del dataset
 	 * @throws FileNotFoundException
 	 *             si el fichero no se encuentra
 	 */

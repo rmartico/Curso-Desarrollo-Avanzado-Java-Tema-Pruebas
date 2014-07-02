@@ -25,7 +25,7 @@ public class AccesoThalentiaWebdriverBackedTest extends SeleneseTestCase {
 		selenium.click("css=img[title=\"Acceso Campus\"]");
 		selenium.waitForPageToLoad("5000");
 		selenium.type("id=usuario", "rmartico");
-		selenium.type("name=pass", "skreemer");
+		selenium.type("name=pass", "");
 		selenium.click("id=enviar");
 		selenium.waitForPageToLoad("5000");
 		assertTrue(selenium.isTextPresent("Curso Especialista Java"));

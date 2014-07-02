@@ -20,8 +20,8 @@ import org.dbunit.util.search.SearchException;
 /**
  * Utilidad para exportar los datos a XML para su uso con dbUnit.
  * 
- * @author <A HREF="mailto:rmartico@ubu.es">Ra�l Marticorena</A>
- * @author <A HREF="mailto:clopezno@ubu.es">Carlos L�pez</A>
+ * @author <A HREF="mailto:rmartico@ubu.es">Raúl Marticorena</A>
+ * @author <A HREF="mailto:clopezno@ubu.es">Carlos López</A>
  * @version 1.0
  */
 public class UtilidadExportacionBaseDatos {
@@ -43,28 +43,28 @@ public class UtilidadExportacionBaseDatos {
 				"./data/agenda_completa.xml", connection);
 		AgendaDB.cerrarAgenda();
 		// Otros ejemplos, se dejan y comentan para los alumnos...
-		// exportaci�nCompleta("./data/agenda_completa.xml", connection);
-		// exportaci�nParcial("Contactos",
+		// exportaciónCompleta("./data/agenda_completa.xml", connection);
+		// exportaciónParcial("Contactos",
 		// "SELECT * FROM CONTACTOS WHERE idContacto > 10",
 		// "./contactos_con_id.xml", connection);
 
 	}
 
 	/**
-	 * Exportaci�n de una tabla y las que dependen de ella.
+	 * Exportación de una tabla y las que dependen de ella.
 	 * 
 	 * @param tablaX
 	 *            tabla inicia a exportar
 	 * @param rutaFicheroSalidaXML
 	 *            fichero de salida
 	 * @param connection
-	 *            conexi�n
+	 *            conexión
 	 * @throws SearchException
-	 *             error en b�squeda
+	 *             error en búsqueda
 	 * @throws SQLException
 	 *             error en acceso a base de datos
 	 * @throws DataSetException
-	 *             error en creaci�n
+	 *             error en creación
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 */
@@ -72,7 +72,7 @@ public class UtilidadExportacionBaseDatos {
 			String rutaFicheroSalidaXML, IDatabaseConnection connection)
 			throws SearchException, SQLException, DataSetException,
 			IOException, FileNotFoundException {
-		// exportaci�n de tablas dependientes:
+		// exportación de tablas dependientes:
 		// exporta la tablaX y todas las tblas que tienen con PK como FK
 		// de tablaX en el orden adecuado para insertar datos
 		String[] depTableNames = TablesDependencyHelper.getAllDependentTables(
@@ -83,7 +83,7 @@ public class UtilidadExportacionBaseDatos {
 	}
 
 	/**
-	 * Exportaci�n parcial de datos, incluyendo filtrado.
+	 * Exportación parcial de datos, incluyendo filtrado.
 	 * 
 	 * @param tabla
 	 *            nombre de la tabla
@@ -96,7 +96,7 @@ public class UtilidadExportacionBaseDatos {
 	 * @throws IOException
 	 *             error en acceso a fichero
 	 * @throws DataSetException
-	 *             error en creaci�n del dataset
+	 *             error en creación del dataset
 	 * @throws FileNotFoundException
 	 *             si el fichero no se encuentra
 	 */
@@ -104,7 +104,7 @@ public class UtilidadExportacionBaseDatos {
 			String rutaFicheroSalidaXML, IDatabaseConnection connection)
 			throws AmbiguousTableNameException, IOException, DataSetException,
 			FileNotFoundException {
-		// exportaci�n parcial
+		// exportación parcial
 		QueryDataSet partialDataSet = new QueryDataSet(connection);
 		partialDataSet.addTable(tabla, sql);
 		FlatXmlDataSet.write(partialDataSet, new FileOutputStream(
@@ -112,14 +112,14 @@ public class UtilidadExportacionBaseDatos {
 	}
 
 	/**
-	 * Exportaci�n completa de la base de datos. OJO puede ser necesario
-	 * reordenar los datos para una correcta inserci�n puesto que no revisa las
+	 * Exportación completa de la base de datos. OJO puede ser necesario
+	 * reordenar los datos para una correcta inserción puesto que no revisa las
 	 * dependencias.
 	 * 
 	 * @param rutaFicheroSalidaXML
 	 *            ruta del fichero de salida XML
 	 * @param connection
-	 *            conexi�n
+	 *            conexión
 	 * @throws SQLException
 	 *             error en acceso a base de datos
 	 * @throws IOException
