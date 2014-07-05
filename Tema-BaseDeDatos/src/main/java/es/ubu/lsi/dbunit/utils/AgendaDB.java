@@ -16,14 +16,14 @@ import java.sql.Statement;
  * @version 1.0
  */
 public class AgendaDB {
+	
+	/** Script de creación de la base de datos */
+	private static final String SCRIPT = "./data/script db agenda.txt";
 
 	/** Script con el volcado de datos */
 	private static final String DATA_BULK = "./data/bulk datos.txt";
 
-	/** Script de creación de la base de datos */
-	private static final String SCRIPT = "./data/script db agenda.txt";
-
-	/** Conexi�n */
+	/** Conexión */
 	private static Connection connection;
 
 	/**

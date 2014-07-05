@@ -34,6 +34,7 @@ public class AgendaDTD {
 		Connection jdbcConnection = AgendaDB.getConnection();
 		crearDTD("./data/AGENDA.DTD", jdbcConnection);
 		AgendaDB.cerrarAgenda();
+		System.out.println("Creada la DTD en el directorio ./data/AGENDA.DTD");
 	}
 
 	/**

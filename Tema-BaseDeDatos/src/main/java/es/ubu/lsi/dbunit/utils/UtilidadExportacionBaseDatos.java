@@ -73,7 +73,7 @@ public class UtilidadExportacionBaseDatos {
 			throws SearchException, SQLException, DataSetException,
 			IOException, FileNotFoundException {
 		// exportación de tablas dependientes:
-		// exporta la tablaX y todas las tblas que tienen con PK como FK
+		// exporta la tablaX y todas las tblas que tienen como PK alguna FK
 		// de tablaX en el orden adecuado para insertar datos
 		String[] depTableNames = TablesDependencyHelper.getAllDependentTables(
 				connection, tablaX);

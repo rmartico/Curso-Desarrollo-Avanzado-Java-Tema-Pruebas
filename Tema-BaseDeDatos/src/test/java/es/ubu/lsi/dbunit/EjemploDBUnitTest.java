@@ -37,7 +37,7 @@ public class EjemploDBUnitTest extends DBTestCase {
 		try {
 			AgendaDB.crearAgendaSinDatos();
 			AgendaDB.cerrarAgenda();
-			// Propiedades para la base de datos de DBUnit
+			// Propiedades para la base de datos de dbUnit
 			System.setProperty(
 					PropertiesBasedJdbcDatabaseTester.DBUNIT_DRIVER_CLASS,
 					"org.hsqldb.jdbcDriver");
@@ -127,7 +127,7 @@ public class EjemploDBUnitTest extends DBTestCase {
 	/**
 	 * Test comprobando que la consulta se realiza correctamente. 
 	 * Se utiliza la ordenacion de columnas, dado que el resultado no incluye
-	 * clave primaria y podría no coincidir el orden de las columnas.
+	 * clave primaria y podría no coincidir el orden.
 	 * 
 	 * @throws Exception
 	 */
@@ -151,7 +151,7 @@ public class EjemploDBUnitTest extends DBTestCase {
 		// Ordenamos los datos
 		ITable sortedExpectedTable = new SortedTable(expectedTable);
 		
-		// Filtramos sólo las columnas que están en el dataset esperado
+		// Filtramos por las columnas que están en el dataset esperado
 		// en el mismo orden
 		ITable filteredAndSortedTable = DefaultColumnFilter.includedColumnsTable(
 				new SortedTable(actualTable), sortedExpectedTable.getTableMetaData().getColumns());
