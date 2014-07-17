@@ -1,8 +1,8 @@
-Curso-Desarrollo-Avanzado-Java
-==============================
+Curso de Desarrollo Avanzado Java
+=================================
 
-Tema-Pruebas
-------------
+Tema-Pruebas del software
+-------------------------
 
 Este repositorio contiene el material utilizado en los videos demostrativos, formado por un workspace y sus correspondientes proyectos Eclipse con Maven, con los siguientes elementos:
 
