@@ -1,3 +1,20 @@
+/*
+ * Copyright © 2014 Arcadia Consulting C.B. . All Rights Reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification 
+ * are not permitted 
+ *
+ * THIS SOFTWARE IS PROVIDED BY ARCADIA CONSULTING C.B. "AS IS" AND ANY EXPRESS
+ * OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+ * DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, 
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
+ * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 package es.ubu.lsi.ejemplos.junit.fichero.compresion;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +25,8 @@ import es.ubu.lsi.ejemplos.junit.fichero.io.FicheroNoEncontradoException;
 
 /**
  * 
- * @author <A HREF="mailto:rmartico@ubu.es">Ra�l Marticorena</A>
- * @author <A HREF="mailto:clopezno@ubu.es">Carlos L�pez</A>
+ * @author <A HREF="mailto:rmartico@ubu.es">Raúl Marticorena</A>
+ * @author <A HREF="mailto:clopezno@ubu.es">Carlos López</A>
  * @version 1.0
  * 
  */
@@ -24,7 +41,7 @@ public class Jar implements Comprimido{
 	}
 	
 	/**
-	 * A�ade un fichero para a�adirlo comprimido al fichero zip actual.
+	 * A�ade un fichero para añadirlo comprimido al fichero zip actual.
 	 *
 	 * @param	fichero fichero a comprimir
 	 * @throws	FicheroComprimidoException si el fichero ya ha sido comprimido
@@ -52,11 +69,11 @@ public class Jar implements Comprimido{
 	}
 	
 	/**
-	 * Obtiene el tama�o del fichero comprimido, como la suma de los
-	 * tama�os de los ficheros introducidos multiplicado por el factor
-	 * de compresi�n.
+	 * Obtiene el tamaño del fichero comprimido, como la suma de los
+	 * tamaños de los ficheros introducidos multiplicado por el factor
+	 * de compresión.
 	 *
-	 * @return suma de los tama�os de los ficheros una vez comprimidos
+	 * @return suma de los tamaños de los ficheros una vez comprimidos
 	 */
 	public double obtenerTamañoComprimido(){
 		double sum = 0.0;

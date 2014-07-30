@@ -1,3 +1,20 @@
+/*
+ * Copyright © 2014 Arcadia Consulting C.B. . All Rights Reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification 
+ * are not permitted 
+ *
+ * THIS SOFTWARE IS PROVIDED BY ARCADIA CONSULTING C.B. "AS IS" AND ANY EXPRESS
+ * OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+ * DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, 
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
+ * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 package es.ubu.lsi.ejemplos.junit.fichero.io;
 
 /**
@@ -20,9 +37,9 @@ public class FicheroImpl implements Fichero {
 	/**
 	 * Constructor.
 	 * 
-	 * @param size tama�o
+	 * @param size tamaño
 	 * @param nombre nombre 
-	 * @param extensi�n extensi�n
+	 * @param extensión extensión
 	 */
 	public FicheroImpl(int size, String nombre, String extension) {
 		this.setSize(size);
@@ -51,7 +68,7 @@ public class FicheroImpl implements Fichero {
 	/**
 	 * {@inheritDoc}.
 	 *
-	 * @param extensi�n {@inheritDoc}
+	 * @param extensión {@inheritDoc}
 	 */
 	public void setExtension(String extension) {
 		this.extension = extension;

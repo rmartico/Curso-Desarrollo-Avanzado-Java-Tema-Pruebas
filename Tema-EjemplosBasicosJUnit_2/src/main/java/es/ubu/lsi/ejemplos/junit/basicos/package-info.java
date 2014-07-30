@@ -1,4 +1,4 @@
 /**
- * Ejemplos b�sicos de pruebas sobre clase b�sicas.
+ * Ejemplos básicos de pruebas sobre clase básicas.
  */
 package es.ubu.lsi.ejemplos.junit.basicos;

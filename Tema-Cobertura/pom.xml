@@ -36,7 +36,7 @@
 			<version>1.7.0</version>
 			<scope>system</scope>
 			<!-- <systemPath>C:/java/lib/tools.jar</systemPath> -->
-			<systemPath>C:/Java/jdk1.7.0_21/lib/tools.jar</systemPath>
+			<systemPath>C:/Java/jdk1.8.0_05/lib/tools.jar</systemPath>
 		</dependency>
 	</dependencies>
 
