@@ -23,11 +23,11 @@ import static org.mockito.Mockito.when;
 import static org.powermock.api.mockito.PowerMockito.doThrow;
 import static org.powermock.api.mockito.PowerMockito.mockStatic;
 
+import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
+import org.powermock.modules.junit4.rule.PowerMockRule;
 
 /**
  * Test de demostracion del uso de PowerMock con metodos estaticos.
@@ -37,9 +37,12 @@ import org.powermock.modules.junit4.PowerMockRunner;
  * @version 1.0
  * 
  */
-@RunWith(PowerMockRunner.class)
+// @RunWith(PowerMockRunner.class) // Remove using @Rule 
 @PrepareForTest(Estatico.class)
-public class ClienteTest { 
+public class ClienteTest {
+	
+	@Rule
+	public PowerMockRule rule = new PowerMockRule();
 
 	/**
 	 * Test que comprueba invocacion a metodos estaticos.

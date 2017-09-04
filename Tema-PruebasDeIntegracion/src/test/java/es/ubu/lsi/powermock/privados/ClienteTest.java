@@ -17,14 +17,14 @@
  */
 package es.ubu.lsi.powermock.privados;
 
-import static org.powermock.api.mockito.PowerMockito.spy;
 import static org.powermock.api.mockito.PowerMockito.doReturn;
+import static org.powermock.api.mockito.PowerMockito.spy;
 import static org.powermock.api.mockito.PowerMockito.verifyPrivate;
 
+import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
+import org.powermock.modules.junit4.rule.PowerMockRule;
 
 /**
  * Test de demostracion del uso de PowerMock con metodo privado.
@@ -34,10 +34,13 @@ import org.powermock.modules.junit4.PowerMockRunner;
  * @version 1.0
  * 
  */
-@RunWith(PowerMockRunner.class)
+// @RunWith(PowerMockRunner.class) // Remove using @Rule 
 @PrepareForTest(Delegado.class)
 public class ClienteTest {
-
+	
+	@Rule
+	public PowerMockRule rule = new PowerMockRule();
+		
 	/**
 	 * Test que accede al metodo privado validar de un delegado "real"
 	 * utilizando espias.

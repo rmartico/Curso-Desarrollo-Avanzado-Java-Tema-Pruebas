@@ -19,14 +19,17 @@ package es.ubu.lsi.powermock.constructores;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.when;
 import static org.powermock.api.mockito.PowerMockito.verifyNew;
 import static org.powermock.api.mockito.PowerMockito.whenNew;
 
+import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import static org.mockito.Mockito.*;
 import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
+import org.powermock.modules.junit4.rule.PowerMockRule;
 
 
 /**
@@ -38,10 +41,13 @@ import org.powermock.modules.junit4.PowerMockRunner;
  * @version 1.0
  * 
  */
-@RunWith(PowerMockRunner.class)
+// @RunWith(PowerMockRunner.class) // Remove using @Rule 
 @PrepareForTest({Cliente.class, Delegado.class})
 public class ClienteTest {
-
+	
+	@Rule
+	public PowerMockRule rule = new PowerMockRule();
+	
 	/**
 	 * Test que permite hacer stubbing de invocaciones al constructor del
 	 * Delegado sin argumentos, lanzando una excepcion.
